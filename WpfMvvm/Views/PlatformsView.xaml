@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="WpfMvvm.Views.PlatformsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfMvvm.Views"
+             xmlns:controls="clr-namespace:WpfMvvm.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label>Info</Label>
+            <TextBox Width="100" Text="{Binding Info, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+        <Button Margin="0 10" Padding="20 5"
+            Command="{Binding GetPlatformsCommand}"
+            Content="Platformları Getir"
+            FontSize="24" />
+        <local:PlatformListView DataContext="{Binding PlatformListViewModel}"/>
+    </StackPanel>
+</UserControl>
